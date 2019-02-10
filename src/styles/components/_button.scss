@@ -1,5 +1,5 @@
 .button{
-  background: $blue;
+  background: $orange;
   color: white;
   border: none;
   font-weight: 300;
@@ -17,8 +17,4 @@
 .button--secondary {
   background: #888;
   margin-bottom: $s-size;
-}
-
-.button--login {
-  border-radius: 30px;
 }
