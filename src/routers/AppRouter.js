@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import AddExpensePage from '../components/AddExpensePage';
 import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
@@ -12,17 +12,17 @@ import PublicRoute from './PublicRoute';
 export const history = createHistory();
 
 const AppRouter = () => (
-  <Router history={history}>
+  <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
     <div>
       <Switch>
-        <PublicRoute path={process.env.PUBLIC_URL + '/'} component={LoginPage} exact={true} />
-        <PrivateRoute path={process.env.PUBLIC_URL + '/dashboard'} component={ExpenseDashboardPage} exact={true} />
-        <PrivateRoute path={process.env.PUBLIC_URL + '/create'} component={AddExpensePage} />
-        <PrivateRoute path={process.env.PUBLIC_URL + '/edit/:id'} component={EditExpensePage} />
+        <PublicRoute path='/' component={LoginPage} exact={true} />
+        <PrivateRoute path='/dashboard' component={ExpenseDashboardPage} exact={true} />
+        <PrivateRoute path='/create' component={AddExpensePage} />
+        <PrivateRoute path='/edit/:id' component={EditExpensePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
-  </Router>
+  </BrowserRouter>
 );
 
 export default AppRouter;
