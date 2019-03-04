@@ -15,10 +15,10 @@ const AppRouter = () => (
   <Router history={history}>
     <div>
       <Switch>
-        <PublicRoute path='/' component={LoginPage} exact={true} />
-        <PrivateRoute path='/dashboard' component={ExpenseDashboardPage} exact={true} />
-        <PrivateRoute path='/create' component={AddExpensePage} />
-        <PrivateRoute path='/edit/:id' component={EditExpensePage} />
+        <PublicRoute path={process.env.PUBLIC_URL + '/'} component={LoginPage} exact={true} />
+        <PrivateRoute path={process.env.PUBLIC_URL + '/dashboard'} component={ExpenseDashboardPage} exact={true} />
+        <PrivateRoute path={process.env.PUBLIC_URL + '/create'} component={AddExpensePage} />
+        <PrivateRoute path={process.env.PUBLIC_URL + '/edit/:id'} component={EditExpensePage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>
