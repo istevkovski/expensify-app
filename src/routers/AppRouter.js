@@ -12,7 +12,7 @@ import PublicRoute from './PublicRoute';
 export const history = createHistory();
 
 const AppRouter = () => (
-  <BrowserRouter history={history} basename={process.env.PUBLIC_URL}>
+  <BrowserRouter history={history} basename="/">
     <div>
       <Switch>
         <PublicRoute path='/' component={LoginPage} exact={true} />
